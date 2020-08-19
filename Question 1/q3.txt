@@ -1,0 +1,20 @@
+Tanay Cansin Dogan
+150150119
+
+-> let say frankensteinSort runs at T(n) time for array size n
+	-> T1(n): run time of print_arr() => T1(n) = O(n)
+	-> T2(n): run time of func() => T2(n) = O(n)
+	-> int mid calculation => O(1)
+	-> T3(n/2): MinMaxSort(n/2)		// left sub-array
+	-> T(n/2) : frankensteinSort for half of the array
+	-> T4(n): merge operation => O(n)
+
+-> T3(n): MinMaxSort(n)
+	->  (n/2)*(T5(n)+T6(n))
+		where
+		T5(n): complexity of divide&conq Max() function => lgn
+		T6(n): complexity of divide&conq Min() function => lgn
+	
+	Thus => T3(n) = n*lgn
+
+Thus => T(n) =  (n/2)(lgn  - 1) + T(n/2) + O(n)   --->  solution exists for T(n) = O(n*lgn)
